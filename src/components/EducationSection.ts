@@ -5,9 +5,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import type { Education, GlobalSettings } from '../types/resume'
 
 /**
- * @element mr-education-section
+ * @element rk-education-section
  */
-@customElement('mr-education-section')
+@customElement('rk-education-section')
 export class EducationSectionElement extends LitElement {
   @property({ type: Array })
   data: Education[] = []
@@ -86,7 +86,7 @@ export class EducationSectionElement extends LitElement {
         style="margin-top: ${this.globalSettings?.sectionSpacing || 24}px"
       >
         ${this.showTitle
-          ? html` <mr-section-title title="教育背景" .globalSettings=${this.globalSettings} template-id=${this.templateId}></mr-section-title> `
+          ? html` <rk-section-title title="教育背景" .globalSettings=${this.globalSettings} template-id=${this.templateId}></rk-section-title> `
           : ''}
         <div>${visibleEducation.map(edu => this.renderEducationItem(edu))}</div>
       </div>
@@ -96,6 +96,6 @@ export class EducationSectionElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-education-section': EducationSectionElement
+    'rk-education-section': EducationSectionElement
   }
 }

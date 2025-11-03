@@ -29,7 +29,7 @@ Resume Kit 可以在任何前端框架中使用：
 
 1. **导入组件库**：`import '@resume-kit/dist/index.js'`
 2. **导入类型和工具**：`import { createInitialResumeData, type ResumeData } from '@resume-kit'`
-3. **使用 Web Components**：在 HTML 中直接使用 `<mr-resume-preview>` 等组件
+3. **使用 Web Components**：在 HTML 中直接使用 `<rk-resume-preview>` 等组件
 
 支持在以下环境中使用：
 - ⚛️ React / Next.js
@@ -41,7 +41,7 @@ Resume Kit 可以在任何前端框架中使用：
 
 ## 📚 核心组件
 
-### `<mr-resume-preview>`
+### `<rk-resume-preview>`
 
 主简历预览组件，整合所有子组件
 
@@ -49,7 +49,7 @@ Resume Kit 可以在任何前端框架中使用：
   - `value`: 简历数据对象（ResumeData）
   - `template-id`: 模板类型（'classic' | 'modern' | 'timeline'）
 
-### `<mr-base-info>`
+### `<rk-base-info>`
 
 基本信息组件，展示姓名、联系方式等
 
@@ -58,7 +58,7 @@ Resume Kit 可以在任何前端框架中使用：
   - `globalSettings`: 全局样式设置
   - `template-id`: 模板类型
 
-### `<mr-experience-section>`
+### `<rk-experience-section>`
 
 工作经验模块
 
@@ -67,7 +67,7 @@ Resume Kit 可以在任何前端框架中使用：
   - `globalSettings`: 全局样式设置
   - `show-title`: 是否显示标题
 
-### `<mr-education-section>`
+### `<rk-education-section>`
 
 教育背景模块
 
@@ -76,7 +76,7 @@ Resume Kit 可以在任何前端框架中使用：
   - `globalSettings`: 全局样式设置
   - `show-title`: 是否显示标题
 
-### `<mr-project-section>`
+### `<rk-project-section>`
 
 项目经验模块
 
@@ -85,7 +85,7 @@ Resume Kit 可以在任何前端框架中使用：
   - `globalSettings`: 全局样式设置
   - `show-title`: 是否显示标题
 
-### `<mr-skill-section>`
+### `<rk-skill-section>`
 
 技能模块
 
@@ -94,7 +94,7 @@ Resume Kit 可以在任何前端框架中使用：
   - `globalSettings`: 全局样式设置
   - `show-title`: 是否显示标题
 
-### `<mr-custom-section>`
+### `<rk-custom-section>`
 
 自定义模块，可用于添加其他内容
 

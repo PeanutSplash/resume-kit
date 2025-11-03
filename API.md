@@ -5,15 +5,15 @@
 ## 目录
 
 - [Web Components](#web-components)
-  - [mr-resume-preview](#mr-resume-preview)
-  - [mr-base-info](#mr-base-info)
-  - [mr-experience-section](#mr-experience-section)
-  - [mr-education-section](#mr-education-section)
-  - [mr-project-section](#mr-project-section)
-  - [mr-skill-section](#mr-skill-section)
-  - [mr-custom-section](#mr-custom-section)
-  - [mr-section-title](#mr-section-title)
-  - [mr-icon](#mr-icon)
+  - [rk-resume-preview](#rk-resume-preview)
+  - [rk-base-info](#rk-base-info)
+  - [rk-experience-section](#rk-experience-section)
+  - [rk-education-section](#rk-education-section)
+  - [rk-project-section](#rk-project-section)
+  - [rk-skill-section](#rk-skill-section)
+  - [rk-custom-section](#rk-custom-section)
+  - [rk-section-title](#rk-section-title)
+  - [rk-icon](#rk-icon)
 - [TypeScript 类型](#typescript-类型)
 - [工具函数](#工具函数)
 - [常量](#常量)
@@ -22,7 +22,7 @@
 
 ## Web Components
 
-### `<mr-resume-preview>`
+### `<rk-resume-preview>`
 
 简历预览主组件，负责整合和渲染所有子模块。
 
@@ -51,10 +51,10 @@ const resumeData: ResumeData = createInitialResumeData({
 ```
 
 ```html
-<mr-resume-preview 
+<rk-resume-preview 
   .value="${resumeData}" 
   template-id="modern"
-></mr-resume-preview>
+></rk-resume-preview>
 ```
 
 #### 内部实现
@@ -65,7 +65,7 @@ const resumeData: ResumeData = createInitialResumeData({
 
 ---
 
-### `<mr-base-info>`
+### `<rk-base-info>`
 
 基本信息组件，展示个人基础信息。
 
@@ -136,16 +136,16 @@ const basicInfo: BasicInfo = {
 ```
 
 ```html
-<mr-base-info 
+<rk-base-info 
   .data="${basicInfo}"
   .globalSettings="${globalSettings}"
   template-id="classic"
-></mr-base-info>
+></rk-base-info>
 ```
 
 ---
 
-### `<mr-experience-section>`
+### `<rk-experience-section>`
 
 工作经验模块组件。
 
@@ -182,16 +182,16 @@ const experience: Experience[] = [
 ```
 
 ```html
-<mr-experience-section 
+<rk-experience-section 
   .data="${experience}"
   .globalSettings="${globalSettings}"
   show-title
-></mr-experience-section>
+></rk-experience-section>
 ```
 
 ---
 
-### `<mr-education-section>`
+### `<rk-education-section>`
 
 教育背景模块组件。
 
@@ -223,16 +223,16 @@ const education: Education[] = [
 ```
 
 ```html
-<mr-education-section 
+<rk-education-section 
   .data="${education}"
   .globalSettings="${globalSettings}"
   show-title
-></mr-education-section>
+></rk-education-section>
 ```
 
 ---
 
-### `<mr-project-section>`
+### `<rk-project-section>`
 
 项目经验模块组件。
 
@@ -262,16 +262,16 @@ const projects: Project[] = [
 ```
 
 ```html
-<mr-project-section 
+<rk-project-section 
   .data="${projects}"
   .globalSettings="${globalSettings}"
   show-title
-></mr-project-section>
+></rk-project-section>
 ```
 
 ---
 
-### `<mr-skill-section>`
+### `<rk-skill-section>`
 
 技能模块组件。
 
@@ -298,16 +298,16 @@ const skillContent = `
 ```
 
 ```html
-<mr-skill-section 
+<rk-skill-section 
   .data="${skillContent}"
   .globalSettings="${globalSettings}"
   show-title
-></mr-skill-section>
+></rk-skill-section>
 ```
 
 ---
 
-### `<mr-custom-section>`
+### `<rk-custom-section>`
 
 自定义模块组件，用于添加额外的内容模块。
 
@@ -338,18 +338,18 @@ const customItems: CustomItem[] = [
 ```
 
 ```html
-<mr-custom-section 
+<rk-custom-section 
   section-id="awards"
   title="获奖经历"
   .items="${customItems}"
   .globalSettings="${globalSettings}"
   show-title
-></mr-custom-section>
+></rk-custom-section>
 ```
 
 ---
 
-### `<mr-section-title>`
+### `<rk-section-title>`
 
 模块标题组件。
 
@@ -364,16 +364,16 @@ const customItems: CustomItem[] = [
 #### 使用示例
 
 ```html
-<mr-section-title 
+<rk-section-title 
   title="工作经验"
   icon="Briefcase"
   .globalSettings="${globalSettings}"
-></mr-section-title>
+></rk-section-title>
 ```
 
 ---
 
-### `<mr-icon>`
+### `<rk-icon>`
 
 图标组件，基于 Lucide 图标库。
 
@@ -388,9 +388,9 @@ const customItems: CustomItem[] = [
 #### 使用示例
 
 ```html
-<mr-icon name="Mail" size="16" color="#333"></mr-icon>
-<mr-icon name="Phone" size="18"></mr-icon>
-<mr-icon name="MapPin" size="20" color="rgb(59, 130, 246)"></mr-icon>
+<rk-icon name="Mail" size="16" color="#333"></rk-icon>
+<rk-icon name="Phone" size="18"></rk-icon>
+<rk-icon name="MapPin" size="20" color="rgb(59, 130, 246)"></rk-icon>
 ```
 
 #### 辅助函数
@@ -1020,7 +1020,7 @@ function ResumeApp() {
   }, [data])
 
   return (
-    <mr-resume-preview 
+    <rk-resume-preview 
       ref={previewRef}
       template-id="modern"
     />

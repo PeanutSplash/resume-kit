@@ -35,14 +35,14 @@ export { SkillSectionElement } from './components/SkillSection'
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-icon': InstanceType<typeof import('./components/Icon').IconElement>
-    'mr-section-title': InstanceType<typeof import('./components/SectionTitle').SectionTitleElement>
-    'mr-base-info': InstanceType<typeof import('./components/BaseInfo').BaseInfoElement>
-    'mr-education-section': InstanceType<typeof import('./components/EducationSection').EducationSectionElement>
-    'mr-experience-section': InstanceType<typeof import('./components/ExperienceSection').ExperienceSectionElement>
-    'mr-project-section': InstanceType<typeof import('./components/ProjectSection').ProjectSectionElement>
-    'mr-skill-section': InstanceType<typeof import('./components/SkillSection').SkillSectionElement>
-    'mr-custom-section': InstanceType<typeof import('./components/CustomSection').CustomSectionElement>
-    'mr-resume-preview': InstanceType<typeof import('./components/ResumePreview').ResumePreviewElement>
+    'rk-icon': InstanceType<typeof import('./components/Icon').IconElement>
+    'rk-section-title': InstanceType<typeof import('./components/SectionTitle').SectionTitleElement>
+    'rk-base-info': InstanceType<typeof import('./components/BaseInfo').BaseInfoElement>
+    'rk-education-section': InstanceType<typeof import('./components/EducationSection').EducationSectionElement>
+    'rk-experience-section': InstanceType<typeof import('./components/ExperienceSection').ExperienceSectionElement>
+    'rk-project-section': InstanceType<typeof import('./components/ProjectSection').ProjectSectionElement>
+    'rk-skill-section': InstanceType<typeof import('./components/SkillSection').SkillSectionElement>
+    'rk-custom-section': InstanceType<typeof import('./components/CustomSection').CustomSectionElement>
+    'rk-resume-preview': InstanceType<typeof import('./components/ResumePreview').ResumePreviewElement>
   }
 }

@@ -6,9 +6,9 @@ import type { BasicFieldType, BasicInfo, CustomFieldType, GlobalSettings } from 
 import { getBorderRadiusValue } from '../types/resume'
 
 /**
- * @element mr-base-info
+ * @element rk-base-info
  */
-@customElement('mr-base-info')
+@customElement('rk-base-info')
 export class BaseInfoElement extends LitElement {
   @property({ type: Object })
   data!: BasicInfo
@@ -228,7 +228,7 @@ export class BaseInfoElement extends LitElement {
               ${this.useIconMode
                 ? html`
                     <div class="flex items-center gap-1">
-                      ${item.icon ? html` <mr-icon name=${item.icon} size="16" color=${this.isModernTemplate ? '#ffffff' : 'rgb(75, 85, 99)'}></mr-icon> ` : ''}
+                      ${item.icon ? html` <rk-icon name=${item.icon} size="16" color=${this.isModernTemplate ? '#ffffff' : 'rgb(75, 85, 99)'}></rk-icon> ` : ''}
                       ${item.key === 'email'
                         ? html`
                             <a
@@ -313,6 +313,6 @@ export class BaseInfoElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-base-info': BaseInfoElement
+    'rk-base-info': BaseInfoElement
   }
 }

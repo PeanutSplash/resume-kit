@@ -5,9 +5,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import type { GlobalSettings, Project } from '../types/resume'
 
 /**
- * @element mr-project-section
+ * @element rk-project-section
  */
-@customElement('mr-project-section')
+@customElement('rk-project-section')
 export class ProjectSectionElement extends LitElement {
   @property({ type: Array })
   data: Project[] = []
@@ -108,7 +108,7 @@ export class ProjectSectionElement extends LitElement {
         style="margin-top: ${this.globalSettings?.sectionSpacing || 24}px"
       >
         ${this.showTitle
-          ? html` <mr-section-title title="项目经验" .globalSettings=${this.globalSettings} template-id=${this.templateId}></mr-section-title> `
+          ? html` <rk-section-title title="项目经验" .globalSettings=${this.globalSettings} template-id=${this.templateId}></rk-section-title> `
           : ''}
         <div>${visibleProjects.map(project => this.renderProjectItem(project))}</div>
       </div>
@@ -118,6 +118,6 @@ export class ProjectSectionElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-project-section': ProjectSectionElement
+    'rk-project-section': ProjectSectionElement
   }
 }

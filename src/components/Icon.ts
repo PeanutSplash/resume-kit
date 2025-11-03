@@ -4,9 +4,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import * as LucideIcons from 'lucide'
 
 /**
- * @element mr-icon
+ * @element rk-icon
  */
-@customElement('mr-icon')
+@customElement('rk-icon')
 export class IconElement extends LitElement {
   @property({ type: String })
   name = 'Circle'
@@ -79,6 +79,6 @@ export function getIconSVG(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-icon': IconElement
+    'rk-icon': IconElement
   }
 }

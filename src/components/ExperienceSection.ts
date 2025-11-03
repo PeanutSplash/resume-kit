@@ -5,9 +5,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import type { Experience, GlobalSettings } from '../types/resume'
 
 /**
- * @element mr-experience-section
+ * @element rk-experience-section
  */
-@customElement('mr-experience-section')
+@customElement('rk-experience-section')
 export class ExperienceSectionElement extends LitElement {
   @property({ type: Array })
   data: Experience[] = []
@@ -69,7 +69,7 @@ export class ExperienceSectionElement extends LitElement {
         style="margin-top: ${this.globalSettings?.sectionSpacing || 24}px"
       >
         ${this.showTitle
-          ? html` <mr-section-title title="工作经验" .globalSettings=${this.globalSettings} template-id=${this.templateId}></mr-section-title> `
+          ? html` <rk-section-title title="工作经验" .globalSettings=${this.globalSettings} template-id=${this.templateId}></rk-section-title> `
           : ''}
         <div>${visibleExperiences.map(experience => this.renderExperienceItem(experience))}</div>
       </div>
@@ -79,6 +79,6 @@ export class ExperienceSectionElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-experience-section': ExperienceSectionElement
+    'rk-experience-section': ExperienceSectionElement
   }
 }

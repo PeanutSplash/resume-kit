@@ -4,9 +4,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import type { GlobalSettings } from '../types/resume'
 
 /**
- * @element mr-skill-section
+ * @element rk-skill-section
  */
-@customElement('mr-skill-section')
+@customElement('rk-skill-section')
 export class SkillSectionElement extends LitElement {
   @property({ type: String })
   data = ''
@@ -33,7 +33,7 @@ export class SkillSectionElement extends LitElement {
         style="margin-top: ${this.globalSettings?.sectionSpacing || 24}px"
       >
         ${this.showTitle
-          ? html` <mr-section-title title="技能" .globalSettings=${this.globalSettings} template-id=${this.templateId}></mr-section-title> `
+          ? html` <rk-section-title title="技能" .globalSettings=${this.globalSettings} template-id=${this.templateId}></rk-section-title> `
           : ''}
         <div style="margin-top: ${this.globalSettings?.paragraphSpacing}px">
           <div class="text-baseFont" style="font-size: ${this.globalSettings?.baseFontSize || 14}px; line-height: ${this.globalSettings?.lineHeight || 1.6}">
@@ -47,6 +47,6 @@ export class SkillSectionElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-skill-section': SkillSectionElement
+    'rk-skill-section': SkillSectionElement
   }
 }

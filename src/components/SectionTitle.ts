@@ -4,9 +4,9 @@ import { styleMap } from 'lit/directives/style-map.js'
 import type { GlobalSettings } from '../types/resume'
 
 /**
- * @element mr-section-title
+ * @element rk-section-title
  */
-@customElement('mr-section-title')
+@customElement('rk-section-title')
 export class SectionTitleElement extends LitElement {
   @property({ type: String })
   title = ''
@@ -98,6 +98,6 @@ export class SectionTitleElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-section-title': SectionTitleElement
+    'rk-section-title': SectionTitleElement
   }
 }

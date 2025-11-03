@@ -5,9 +5,9 @@ import { styleMap } from 'lit/directives/style-map.js'
 import type { GlobalSettings, ResumeData } from '../types/resume'
 
 /**
- * @element mr-resume-preview
+ * @element rk-resume-preview
  */
-@customElement('mr-resume-preview')
+@customElement('rk-resume-preview')
 export class ResumePreviewElement extends LitElement {
   @property({ type: Object })
   value!: ResumeData
@@ -53,57 +53,57 @@ export class ResumePreviewElement extends LitElement {
 
     switch (sectionId) {
       case 'basic':
-        return html` <mr-base-info .data=${this.value.basic} .globalSettings=${gs} template-id=${this.templateId}></mr-base-info> `
+        return html` <rk-base-info .data=${this.value.basic} .globalSettings=${gs} template-id=${this.templateId}></rk-base-info> `
 
       case 'experience':
         return html`
-          <mr-experience-section
+          <rk-experience-section
             .data=${this.value.experience}
             .globalSettings=${gs}
             template-id=${this.templateId}
             ?show-title=${showTitle}
-          ></mr-experience-section>
+          ></rk-experience-section>
         `
 
       case 'education':
         return html`
-          <mr-education-section
+          <rk-education-section
             .data=${this.value.education}
             .globalSettings=${gs}
             template-id=${this.templateId}
             ?show-title=${showTitle}
-          ></mr-education-section>
+          ></rk-education-section>
         `
 
       case 'skills':
         return this.value.skillContent
           ? html`
-              <mr-skill-section
+              <rk-skill-section
                 .data=${this.value.skillContent}
                 .globalSettings=${gs}
                 template-id=${this.templateId}
                 ?show-title=${showTitle}
-              ></mr-skill-section>
+              ></rk-skill-section>
             `
           : ''
 
       case 'projects':
         return html`
-          <mr-project-section .data=${this.value.projects} .globalSettings=${gs} template-id=${this.templateId} ?show-title=${showTitle}></mr-project-section>
+          <rk-project-section .data=${this.value.projects} .globalSettings=${gs} template-id=${this.templateId} ?show-title=${showTitle}></rk-project-section>
         `
 
       default:
         if (sectionId in (this.value.customData || {})) {
           const sectionTitle = this.value.menuSections?.find(s => s.id === sectionId)?.title || sectionId
           return html`
-            <mr-custom-section
+            <rk-custom-section
               section-id=${sectionId}
               .title=${sectionTitle}
               .items=${this.value.customData[sectionId]}
               .globalSettings=${gs}
               template-id=${this.templateId}
               ?show-title=${showTitle}
-            ></mr-custom-section>
+            ></rk-custom-section>
           `
         }
         return ''
@@ -237,6 +237,6 @@ export class ResumePreviewElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-resume-preview': ResumePreviewElement
+    'rk-resume-preview': ResumePreviewElement
   }
 }

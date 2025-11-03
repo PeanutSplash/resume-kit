@@ -5,9 +5,9 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import type { CustomItem, GlobalSettings } from '../types/resume'
 
 /**
- * @element mr-custom-section
+ * @element rk-custom-section
  */
-@customElement('mr-custom-section')
+@customElement('rk-custom-section')
 export class CustomSectionElement extends LitElement {
   @property({ type: String, attribute: 'section-id' })
   sectionId = ''
@@ -82,7 +82,7 @@ export class CustomSectionElement extends LitElement {
         style="margin-top: ${this.globalSettings?.sectionSpacing || 24}px"
       >
         ${this.showTitle
-          ? html` <mr-section-title .title=${this.title} .globalSettings=${this.globalSettings} template-id=${this.templateId}></mr-section-title> `
+          ? html` <rk-section-title .title=${this.title} .globalSettings=${this.globalSettings} template-id=${this.templateId}></rk-section-title> `
           : ''}
         <div>${visibleItems.map(item => this.renderCustomItem(item))}</div>
       </div>
@@ -92,6 +92,6 @@ export class CustomSectionElement extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mr-custom-section': CustomSectionElement
+    'rk-custom-section': CustomSectionElement
   }
 }
