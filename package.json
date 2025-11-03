@@ -19,7 +19,12 @@
     "dev": "vite build --watch",
     "build": "vite build && tsc --declaration --emitDeclarationOnly --outDir dist",
     "clean": "rimraf dist",
-    "yalc:publish": "pnpm run clean && pnpm run build && yalc push"
+    "yalc:publish": "pnpm run clean && pnpm run build && yalc push",
+    "release": "node scripts/release.js",
+    "release:prep": "node scripts/release.js --skip-npm --skip-github",
+    "release:only": "node scripts/release.js --skip-npm --skip-github && pnpm build && npm publish --access public",
+    "version:patch": "node scripts/version-patch.js",
+    "changelog": "node scripts/update-changelog.js"
   },
   "dependencies": {
     "lit": "^3.2.1",
