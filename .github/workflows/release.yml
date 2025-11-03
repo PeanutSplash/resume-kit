@@ -22,8 +22,6 @@ jobs:
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.14.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,15 +48,33 @@ jobs:
       - name: Extract CHANGELOG content
         id: changelog
         run: |
+          VERSION="${{ steps.get_version.outputs.VERSION }}"
           if [ -f CHANGELOG.md ]; then
-            VERSION="${{ steps.get_version.outputs.VERSION }}"
             # 提取版本对应的 CHANGELOG 内容
-            awk "/^## \[${VERSION}\]/,/^## \[/" CHANGELOG.md | sed '$d' > release-notes.md || \
-            awk "/^## \[${VERSION}\]/,/^$/" CHANGELOG.md > release-notes.md || \
-            echo "Release ${{ steps.get_version.outputs.VERSION }}" > release-notes.md
+            # 方法1: 使用 sed 提取从版本标题到下一个版本标题之间的内容
+            sed -n "/^## \[${VERSION}\]/,/^## \[/p" CHANGELOG.md | sed '$d' | sed '1d' > release-notes.md
+            
+            # 如果方法1失败（可能是最后一个版本），使用方法2
+            if [ ! -s release-notes.md ]; then
+              sed -n "/^## \[${VERSION}\]/,\$p" CHANGELOG.md | sed '1d' > release-notes.md
+              # 移除可能的下一个版本标题行
+              sed -i '/^## \[/d' release-notes.md
+            fi
+            
+            # 清理文件：移除前后空行
+            sed -i '/^$/N;/^\n$/d' release-notes.md
+            sed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' release-notes.md
+            
+            # 如果仍然为空，使用默认内容
+            if [ ! -s release-notes.md ]; then
+              echo "Release ${VERSION}" > release-notes.md
+            fi
           else
-            echo "Release ${{ steps.get_version.outputs.VERSION }}" > release-notes.md
+            echo "Release ${VERSION}" > release-notes.md
           fi
+          
+          echo "Extracted CHANGELOG content:"
+          cat release-notes.md
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
