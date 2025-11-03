@@ -2,7 +2,7 @@
 
 > 一个基于 Web Components 的通用简历组件库，适用于 React、Vue、Svelte 和原生 JavaScript
 
-[![npm version](https://img.shields.io/npm/v/@resume-kit.svg)](https://www.npmjs.com/package/@resume-kit)
+[![npm version](https://img.shields.io/npm/v/resume-kit.svg)](https://www.npmjs.com/package/resume-kit)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ## ✨ 特性
@@ -19,16 +19,16 @@
 
 通过 npm、pnpm 或 yarn 安装：
 
-- `npm install @resume-kit`
-- `pnpm add @resume-kit`
-- `yarn add @resume-kit`
+- `npm install resume-kit`
+- `pnpm add resume-kit`
+- `yarn add resume-kit`
 
 ## 🚀 快速开始
 
 Resume Kit 可以在任何前端框架中使用：
 
-1. **导入组件库**：`import '@resume-kit/dist/index.js'`
-2. **导入类型和工具**：`import { createInitialResumeData, type ResumeData } from '@resume-kit'`
+1. **导入组件库**：`import 'resume-kit/dist/index.js'`
+2. **导入类型和工具**：`import { createInitialResumeData, type ResumeData } from 'resume-kit'`
 3. **使用 Web Components**：在 HTML 中直接使用 `<rk-resume-preview>` 等组件
 
 支持在以下环境中使用：

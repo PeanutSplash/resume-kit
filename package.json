@@ -1,5 +1,5 @@
 {
-  "name": "@resume-kit",
+  "name": "resume-kit",
   "version": "0.1.2",
   "description": "Universal Web Components for Resume/CV (works with React, Vue, Svelte, and vanilla JS)",
   "type": "module",
