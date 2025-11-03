@@ -124,7 +124,7 @@ function generateVersionEntry(version, commits) {
       entry += `${label}\n`;
       categories[key].forEach(commit => {
         // 清理提交消息，移除类型前缀
-        const cleanMessage = commit.message.replace(/^(add|feat|new|change|update|refactor|improve|fix|bugfix|remove|delete|deprecate):\s*)/i, '').trim();
+        const cleanMessage = commit.message.replace(/^(add|feat|new|change|update|refactor|improve|fix|bugfix|remove|delete|deprecate):\s*/i, '').trim();
         entry += `- ${cleanMessage}\n`;
       });
       entry += '\n';
