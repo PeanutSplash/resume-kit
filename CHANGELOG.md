@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2] - 2025-11-03
+
+### Fixed
+- improve CHANGELOG extraction logic in release workflow and script
+
+### Other
+- chore: add 'dist/' directory to .gitignore to prevent build artifacts from being tracked
+
 ## [0.1.1] - 2025-11-03
 
 ### Added
