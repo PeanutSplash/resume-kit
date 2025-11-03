@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.3] - 2025-11-03
+
+- chore: rename package from @resume-kit to resume-kit in package.json and update README references
+
 ## [0.1.2] - 2025-11-03
 
 ### Fixed

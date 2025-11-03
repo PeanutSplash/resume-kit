@@ -1,6 +1,6 @@
 {
   "name": "resume-kit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Universal Web Components for Resume/CV (works with React, Vue, Svelte, and vanilla JS)",
   "type": "module",
   "main": "./dist/index.js",
