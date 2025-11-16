@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.4] - 2025-11-16
+
+- chore:Simplify TypeScript build configuration
+- chore:Update release workflow permissions
+
 ## [0.1.3] - 2025-11-03
 
 - chore: rename package from @resume-kit to resume-kit in package.json and update README references
